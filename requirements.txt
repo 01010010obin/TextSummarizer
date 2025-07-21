@@ -19,3 +19,5 @@ fastapi
 uvicorn
 Jinja2
 evaluate
+python-box
+ipykernel

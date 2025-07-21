@@ -23,3 +23,5 @@ python-box
 ipykernel
 tiktoken
 protobuf
+accelerate
+transformers[torch]

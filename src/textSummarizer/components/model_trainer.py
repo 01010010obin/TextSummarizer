@@ -26,7 +26,7 @@ class ModelTrainer:
             per_device_train_batch_size=1, per_device_eval_batch_size=1,
             weight_decay=0.01, logging_steps=10,
             eval_strategy='steps', eval_steps=10, save_steps=1e6,
-            gradient_accumulation_steps=10
+            gradient_accumulation_steps=10, save_safetensors=False
         ) 
         trainer = Trainer(model = model_pegasus, args = trainer_args,
                   tokenizer = tokenizer, data_collator = seq2seq_data_collator,
@@ -37,4 +37,4 @@ class ModelTrainer:
 
         model_pegasus.save_pretrained(os.path.join(self.config.root_dir, "pegasus-samsum-model"))
 
-        tokenizer.save_pretrained(os.path.join(self.config.root_dir, "tokenizer"))
+        tokenizer.save_pretrained(os.path.join(self.config.root_dir, "pegasus-samsum-model"))
